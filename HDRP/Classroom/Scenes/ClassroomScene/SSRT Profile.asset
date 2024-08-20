@@ -1,0 +1,237 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: SSRT Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 5568032012272873231}
+  - {fileID: 1619252522095087731}
+--- !u!114 &1619252522095087731
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ca370b7a21a1545b9e2a3577971084, type: 3}
+  m_Name: SSRT_HDRP
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  rotationCount:
+    m_OverrideState: 1
+    m_Value: 1
+  stepCount:
+    m_OverrideState: 1
+    m_Value: 16
+  radius:
+    m_OverrideState: 1
+    m_Value: 7.34
+  expFactor:
+    m_OverrideState: 1
+    m_Value: 1.7
+  jitterSamples:
+    m_OverrideState: 1
+    m_Value: 0
+  screenSpaceSampling:
+    m_OverrideState: 1
+    m_Value: 0
+  mipOptimization:
+    m_OverrideState: 1
+    m_Value: 1
+  GIIntensity:
+    m_OverrideState: 1
+    m_Value: 10
+  multiBounceGI:
+    m_OverrideState: 1
+    m_Value: 0
+  normalApproximation:
+    m_OverrideState: 1
+    m_Value: 0
+  backfaceLighting:
+    m_OverrideState: 1
+    m_Value: 0
+  AOIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  thickness:
+    m_OverrideState: 1
+    m_Value: 0.52
+  linearThickness:
+    m_OverrideState: 1
+    m_Value: 0
+  multiBounceAO:
+    m_OverrideState: 1
+    m_Value: 0
+  fallback:
+    m_OverrideState: 1
+    m_Value: 2
+  fallbackPower:
+    m_OverrideState: 1
+    m_Value: 1
+  fallbackIntensity:
+    m_OverrideState: 1
+    m_Value: 2
+  fallbackSampleCount:
+    m_OverrideState: 1
+    m_Value: 4
+  reflectSky:
+    m_OverrideState: 1
+    m_Value: 0
+  temporalAccumulation:
+    m_OverrideState: 1
+    m_Value: 1
+  temporalResponse:
+    m_OverrideState: 1
+    m_Value: 0.35
+  denoising:
+    m_OverrideState: 1
+    m_Value: 1
+  denoisingRadius:
+    m_OverrideState: 1
+    m_Value: 0.5
+  debugMode:
+    m_OverrideState: 1
+    m_Value: 7
+  lightOnly:
+    m_OverrideState: 1
+    m_Value: 1
+  ssrtCS: {fileID: 0}
+  diffuseDenoiserCS: {fileID: 0}
+--- !u!114 &4774660153432961928
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ca370b7a21a1545b9e2a3577971084, type: 3}
+  m_Name: SSRT_HDRP
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  rotationCount:
+    m_OverrideState: 1
+    m_Value: 1
+  stepCount:
+    m_OverrideState: 1
+    m_Value: 16
+  radius:
+    m_OverrideState: 1
+    m_Value: 6.3
+  expFactor:
+    m_OverrideState: 1
+    m_Value: 1.083
+  jitterSamples:
+    m_OverrideState: 1
+    m_Value: 0
+  screenSpaceSampling:
+    m_OverrideState: 1
+    m_Value: 0
+  mipOptimization:
+    m_OverrideState: 1
+    m_Value: 1
+  GIIntensity:
+    m_OverrideState: 1
+    m_Value: 2
+  multiBounceGI:
+    m_OverrideState: 1
+    m_Value: 0.56
+  normalApproximation:
+    m_OverrideState: 1
+    m_Value: 1
+  backfaceLighting:
+    m_OverrideState: 1
+    m_Value: 0
+  AOIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  thickness:
+    m_OverrideState: 1
+    m_Value: 0.38
+  linearThickness:
+    m_OverrideState: 1
+    m_Value: 0
+  multiBounceAO:
+    m_OverrideState: 1
+    m_Value: 0
+  fallback:
+    m_OverrideState: 1
+    m_Value: 2
+  fallbackPower:
+    m_OverrideState: 1
+    m_Value: 1
+  fallbackIntensity:
+    m_OverrideState: 1
+    m_Value: 2
+  fallbackSampleCount:
+    m_OverrideState: 1
+    m_Value: 4
+  reflectSky:
+    m_OverrideState: 0
+    m_Value: 0
+  temporalAccumulation:
+    m_OverrideState: 1
+    m_Value: 1
+  temporalResponse:
+    m_OverrideState: 1
+    m_Value: 0.35
+  denoising:
+    m_OverrideState: 1
+    m_Value: 0
+  denoisingRadius:
+    m_OverrideState: 1
+    m_Value: 0.322
+  debugMode:
+    m_OverrideState: 1
+    m_Value: 7
+  lightOnly:
+    m_OverrideState: 1
+    m_Value: 0
+  ssrtCS: {fileID: 0}
+  diffuseDenoiserCS: {fileID: 0}
+--- !u!114 &5568032012272873231
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
+  m_Name: IndirectLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  indirectDiffuseLightingMultiplier:
+    m_OverrideState: 1
+    m_Value: 0
+  indirectDiffuseLightingLayers:
+    m_OverrideState: 1
+    m_Value: 255
+  reflectionLightingMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+  reflectionLightingLayers:
+    m_OverrideState: 1
+    m_Value: 255
+  reflectionProbeIntensityMultiplier:
+    m_OverrideState: 1
+    m_Value: 1

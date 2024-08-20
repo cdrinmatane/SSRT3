@@ -1,0 +1,351 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9084266790611889478
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f034cba68ab55e046ae1445a42f18c0e, type: 3}
+  m_Name: IndirectLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  indirectDiffuseLightingMultiplier:
+    m_OverrideState: 1
+    m_Value: 0
+  indirectDiffuseLightingLayers:
+    m_OverrideState: 1
+    m_Value: 255
+  reflectionLightingMultiplier:
+    m_OverrideState: 1
+    m_Value: 0
+  reflectionLightingLayers:
+    m_OverrideState: 1
+    m_Value: 255
+  reflectionProbeIntensityMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+--- !u!114 &-6286895136328040645
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ca370b7a21a1545b9e2a3577971084, type: 3}
+  m_Name: SSRT_HDRP
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  rotationCount:
+    m_OverrideState: 1
+    m_Value: 1
+  stepCount:
+    m_OverrideState: 1
+    m_Value: 16
+  radius:
+    m_OverrideState: 1
+    m_Value: 6
+  expStart:
+    m_OverrideState: 1
+    m_Value: 0.416
+  expFactor:
+    m_OverrideState: 1
+    m_Value: 1.18
+  jitterSamples:
+    m_OverrideState: 1
+    m_Value: 1
+  screenSpaceSampling:
+    m_OverrideState: 1
+    m_Value: 0
+  mipOptimization:
+    m_OverrideState: 1
+    m_Value: 1
+  GIIntensity:
+    m_OverrideState: 1
+    m_Value: 9.1
+  multiBounceGI:
+    m_OverrideState: 1
+    m_Value: 0
+  normalApproximation:
+    m_OverrideState: 1
+    m_Value: 0
+  backfaceLighting:
+    m_OverrideState: 1
+    m_Value: 0
+  AOIntensity:
+    m_OverrideState: 1
+    m_Value: 2
+  thickness:
+    m_OverrideState: 1
+    m_Value: 0.29
+  linearThickness:
+    m_OverrideState: 1
+    m_Value: 0
+  multiBounceAO:
+    m_OverrideState: 1
+    m_Value: 0
+  fallback:
+    m_OverrideState: 1
+    m_Value: 0
+  fallbackPower:
+    m_OverrideState: 1
+    m_Value: 4
+  fallbackIntensity:
+    m_OverrideState: 1
+    m_Value: 3.72
+  temporalAccumulation:
+    m_OverrideState: 1
+    m_Value: 1
+  temporalResponse:
+    m_OverrideState: 1
+    m_Value: 0.35
+  denoising:
+    m_OverrideState: 1
+    m_Value: 0
+  denoisingRadius:
+    m_OverrideState: 1
+    m_Value: 0.558
+  debugMode:
+    m_OverrideState: 1
+    m_Value: 6
+  lightOnly:
+    m_OverrideState: 1
+    m_Value: 1
+  ssrtCS: {fileID: 0}
+  diffuseDenoiserCS: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: DXRSettingsProfile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: -6286895136328040645}
+  - {fileID: -9084266790611889478}
+  - {fileID: 9084715480217731540}
+  - {fileID: 3909664625769347862}
+--- !u!114 &3909664625769347862
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
+  maximumVelocity:
+    m_OverrideState: 1
+    m_Value: 200
+  minimumVelocity:
+    m_OverrideState: 1
+    m_Value: 2
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+  m_SampleCount:
+    m_OverrideState: 1
+    m_Value: 8
+--- !u!114 &9084715480217731540
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ef2681fa3dc8c4fa031f044e68c63f, type: 3}
+  m_Name: GlobalIllumination
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 3
+  enable:
+    m_OverrideState: 1
+    m_Value: 0
+  tracing:
+    m_OverrideState: 1
+    m_Value: 1
+  rayMiss:
+    m_OverrideState: 0
+    m_Value: 3
+  depthBufferThickness:
+    m_OverrideState: 1
+    m_Value: 0.1
+  fullResolutionSS:
+    m_OverrideState: 1
+    m_Value: 1
+  SSIL:
+    m_OverrideState: 1
+    m_Value: 0
+  m_MaxRaySteps:
+    m_OverrideState: 1
+    m_Value: 64
+  m_DenoiseSS:
+    m_OverrideState: 1
+    m_Value: 1
+  m_HalfResolutionDenoiserSS:
+    m_OverrideState: 1
+    m_Value: 0
+  m_DenoiserRadiusSS:
+    m_OverrideState: 1
+    m_Value: 0.426
+  m_RotationCount:
+    m_OverrideState: 1
+    m_Value: 1
+  m_StepCount:
+    m_OverrideState: 1
+    m_Value: 16
+  m_DebugRotationIndex:
+    m_OverrideState: 1
+    m_Value: 0
+  m_Radius:
+    m_OverrideState: 1
+    m_Value: 5.7
+  m_ExpStart:
+    m_OverrideState: 1
+    m_Value: 1
+  m_ExpFactor:
+    m_OverrideState: 1
+    m_Value: 1
+  m_ThicknessHeuristic:
+    m_OverrideState: 1
+    m_Value: 0
+  m_Thickness:
+    m_OverrideState: 1
+    m_Value: 1
+  m_ElevationAngles:
+    m_OverrideState: 1
+    m_Value: 0
+  m_SpecularOcclusion:
+    m_OverrideState: 1
+    m_Value: 0
+  m_Width:
+    m_OverrideState: 1
+    m_Value: 0
+  m_GIIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  m_MultiBounceIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  m_AmbientIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  m_LinearThickness:
+    m_OverrideState: 1
+    m_Value: 0
+  m_JitterSamples:
+    m_OverrideState: 1
+    m_Value: 0
+  m_ScreenSpaceSampling:
+    m_OverrideState: 1
+    m_Value: 0
+  m_BackfaceLighting:
+    m_OverrideState: 1
+    m_Value: 0
+  m_TileOptimization:
+    m_OverrideState: 1
+    m_Value: 0
+  m_MipOptimization:
+    m_OverrideState: 1
+    m_Value: 0
+  m_RenderMode:
+    m_OverrideState: 1
+    m_Value: 1
+  m_NormalApproximation:
+    m_OverrideState: 1
+    m_Value: 0
+  m_DebugDraw:
+    m_OverrideState: 1
+    m_Value: 0
+  m_SecondDenoiserPassSS:
+    m_OverrideState: 1
+    m_Value: 1
+  lastBounceFallbackHierarchy:
+    m_OverrideState: 0
+    m_Value: 3
+  layerMask:
+    m_OverrideState: 1
+    m_Value:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  textureLodBias:
+    m_OverrideState: 1
+    m_Value: 7
+  m_RayLength:
+    m_OverrideState: 1
+    m_Value: 50
+  m_ClampValue:
+    m_OverrideState: 1
+    m_Value: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
+  m_FullResolution:
+    m_OverrideState: 1
+    m_Value: 0
+  sampleCount:
+    m_OverrideState: 1
+    m_Value: 2
+  bounceCount:
+    m_OverrideState: 1
+    m_Value: 1
+  m_Denoise:
+    m_OverrideState: 1
+    m_Value: 1
+  m_HalfResolutionDenoiser:
+    m_OverrideState: 1
+    m_Value: 0
+  m_DenoiserRadius:
+    m_OverrideState: 1
+    m_Value: 0.6
+  m_SecondDenoiserPass:
+    m_OverrideState: 1
+    m_Value: 1
+  m_MaxMixedRaySteps:
+    m_OverrideState: 1
+    m_Value: 48
+  receiverMotionRejection:
+    m_OverrideState: 0
+    m_Value: 1
