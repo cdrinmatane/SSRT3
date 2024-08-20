@@ -1,4 +1,4 @@
-![ssrt](Img/0_CoverImage.png)
+![ssrt](HDRP/Img/0_CoverImage.png)
 # SSRT 3
 
 Real-time indirect diffuse illumination using screen-space information for HDRP. Like our previous implementations ([SSRT](https://github.com/cdrinmatane/SSRT)) the algorithm is based on GTAO and uses a horizon-based method to retrieve GI samples, which makes it a lot less noisy/blurry than HDRP's SSGI. Performance is also better than SSGI, at around 2-3 ms on an RTX 3060 for the entire effect. Our novel method bypasses the infinite thickness limitation typical of horizon-based methods and enables light to pass behind thin surfaces.
@@ -23,21 +23,21 @@ Simply copy the SSRT folder into your project's Asset folder.
 
 1) Go to Edit->Project Settings, then "HDRP Global Settings", and add the "SSRT_HDRP" custom post effect to the "After Opaque And Sky" injection point.
 
-![ssrt](Img/usage.png)
+![ssrt](HDRP/Img/usage.png)
 
 2) Add the "SSRT" post effect to a post-process volume.
 
-![ssrt](Img/usage2.png)
+![ssrt](HDRP/Img/usage2.png)
 
 This plugin aims to replace all diffuse indirect lighting. It's highly recommended to disable all other sources of indirect light using the "Indirect Lighting Controller" override, by setting "Indirect Diffuse Lighting Multiplier" to 0:
 
-![ssrt](Img/indirectLightingController.png)
+![ssrt](HDRP/Img/indirectLightingController.png)
 
 This is not mandatory though, and it may still give a visually pleasing result to keep existing diffuse sources (ie: lightmaps, etc).
 
 # Properties
 
-![ssrt](Img/properties.png)
+![ssrt](HDRP/Img/properties.png)
 
 **Sampling**
 * __Rotation Count:__ Number of per-pixel hemisphere slices. This has a big performance cost and should be kept as low as possible.
@@ -81,37 +81,37 @@ This is not mandatory though, and it may still give a visually pleasing result t
 
 SSRT 3 (for Screen Space Ray Tracing) aims to emulate path tracing and produce indirect illumination from screen pixels instead of scene geometry. It's very similar to Unity's SSGI, but much less noisy because it uses a horizon-based sampling method instead of ray marching the pixels. It's also faster than SSGI by about 25-50% depending on the settings used.
 
-![SSGI_VS_SSRT](Img/3_SSGI_vs_SSRT.png)
+![SSGI_VS_SSRT](HDRP/Img/3_SSGI_vs_SSRT.png)
 ***Left:** Unity SSGI without denoising is very noisy. **Right:** SSRT also without denoising has much less noise.*
 
 Ideally, the scene without SSRT should only contain direct lighting: real-time lights (with shadow maps) or emissive objects. It should look like the following image: 
 
-![](Img/7_SSRTOff.png)
+![](HDRP/Img/7_SSRTOff.png)
 
 <!-- It's highly recommended to disable all other sources of indirect light using the "Indirect Lighting Controller" override, by setting "Indirect Diffuse Lighting Multiplier" to 0:
 
-![ssrt](Img/indirectLightingController.png) -->
+![ssrt](HDRP/Img/indirectLightingController.png) -->
 
 SSRT will generate the indirect lighting from screen pixels, and also from ambient sources like *adaptive probe volumes* and *reflection probes*. This will produce a final image that looks like this:
 
-![](Img/1_SSRTOn.png)
+![](HDRP/Img/1_SSRTOn.png)
 
 The indirect lighting only (without albedo) looks like this:
 
-![](Img/2_IndirectLight_WithoutTexture1.png)
+![](HDRP/Img/2_IndirectLight_WithoutTexture1.png)
 
 And the Ambient Occlusion:
 
-![](Img/ao.png)
+![](HDRP/Img/ao.png)
 
 Emissive objects will generate light as if it was a dynamic area light, but if it exits the screen or gets occluded by an object, all the light will disappear:
 
-![](Img/SSRT_emissive_small.gif)
+![](HDRP/Img/SSRT_emissive_small.gif)
 
 
 SSRT samples along a certain number of hemisphere slices around the view vector (the number of slices corresponds to the ***Rotation Count*** property, and the number of samples per side corresponds to the ***Step Count*** property). The ***Exp Start*** and ***Exp Factor*** properties make the distance between samples grow exponentially the farther away they get from the current pixel.
 
-<!-- | ![](Img/samples.png) |
+<!-- | ![](HDRP/Img/samples.png) |
 |:--:| 
 | ***Top:** Debug view of the center pixel of the game screen using 4 rotations with 16 samples per side, using exponential spacing between samples. **Bottom:** Debug from an other point of view showing that screen samples are actually projected in the scene according to the depth buffer.* | -->
 
@@ -119,31 +119,31 @@ Each slice samples the depth buffer in screen space to detect occluders. Increas
 
 A common artifact that can happen if samples are too few (especially using exponential spacing) is banding:
 
-![](Img/banding.png)
+![](HDRP/Img/banding.png)
 
 It happens because samples are all taken at the same distance around the current pixel. A good way to improve it is by checking the ***Jitter Samples*** property. This will randomly offset the sample position along the slice, and trade banding for more noise:
 
-![](Img/banding_jittered.png)
+![](HDRP/Img/banding_jittered.png)
 
 Fortunately the denoiser is able to remove most of the noise:
 
-![](Img/banding_jittered_denoised.png)
+![](HDRP/Img/banding_jittered_denoised.png)
 
 Note that the scene above is an extreme example where the emitter is very small and causes a lot of banding. Typically the artifact is a lot less pronounced.
 
 <!-- Debugging one specific slice shows that samples are projected on the hemisphere slice and block some sectors. 
 
-![](Img/sliceview.png)
+![](HDRP/Img/sliceview.png)
 
 
 Usually horizon-based methods are limited to one maximum elevation per slice side so they cannot handle thin objects properly. To fix this, SSRT uses a 32-bit bitmask to detect which regions are occluded or can cast a light bounce. This later used to compute AO and GI.
 
-![](Img/slice2.png) -->
+![](HDRP/Img/slice2.png) -->
 
 # Credits
 The following code has been developed at [CDRIN](https://www.cdrin.com/) by Olivier Therrien (R&D graphics programmer) with the help of Yannick Levesque (physics teacher at Cégep de Matane), and Clément Darnes (intern R&D programmer).
 
-![cdrin](Img/cdrin_logo.png)
+![cdrin](HDRP/Img/cdrin_logo.png)
 
 The Blender Classroom scene distributed with this plugin is under [CC0](https://choosealicense.com/licenses/cc0-1.0/) license, has been developed by Christophe Seux and comes from [here](https://www.blender.org/download/demo-files/).
 
