@@ -143,7 +143,7 @@ Usually horizon-based methods are limited to one maximum elevation per slice sid
 # Credits
 The following code has been developed at [CDRIN](https://www.cdrin.com/) by Olivier Therrien (R&D graphics programmer) with the help of Yannick Levesque (physics teacher at Cégep de Matane), and Clément Darnes (intern R&D programmer).
 
-![cdrin](HDRP/Img/cdrin_logo.png)
+![cdrin](HDRP/Img/CDRIN_Logo.png)
 
 The Blender Classroom scene distributed with this plugin is under [CC0](https://choosealicense.com/licenses/cc0-1.0/) license, has been developed by Christophe Seux and comes from [here](https://www.blender.org/download/demo-files/).
 
