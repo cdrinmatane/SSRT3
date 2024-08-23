@@ -1,3 +1,5 @@
+// This file comes from the HDRP package: Packages/com.unity.render-pipelines.core/Runtime/RenderPipeline/Raytracing/Shaders/Denoising/DiffuseDenoiser.compute
+
 #pragma kernel GeneratePointDistribution
 
 #pragma kernel BilateralFilterSingle        BILATERAL_FILTER=BilateralFilterSingle     SINGLE_CHANNEL
