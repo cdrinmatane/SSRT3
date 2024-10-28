@@ -31,7 +31,7 @@
     TEXTURE2D_X(_PreviousDepth);
     TEXTURE2D_X(_LightPyramidTexture);
 
-    SAMPLER(sampler_LinearClamp);
+    //SAMPLER(sampler_LinearClamp);
 
     static const float2 offset[17] =
     {
